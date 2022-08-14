@@ -14,7 +14,7 @@ yarn add vue-router@4
 2. 创建一个index.ts
 3. 配置router
 ```
-<!-- 举列 -->
+//举列
 import {createRouter, createWebHistory, createWebHashHistory} from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 
@@ -38,7 +38,7 @@ export default router
 ```
 4. 挂载到Vue上去
 ```
-<!-- 举列 -->
+//举列
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'

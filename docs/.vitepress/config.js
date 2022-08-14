@@ -18,9 +18,11 @@ module.exports = {
 				items: [
 				  { text: 'Vite创建vue模板', link: '/vue3/vueCreate' },
 				  { text: '配置路由', link: '/vue3/vueRouter' },
+				  { text: '模块化路由', link: '/vue3/modulesRouter' },
 				  { text: 'Vuex', link: '/vue3/vuex' },
 				  { text: '路由守卫', link: '/vue3/routerGuards' },
 				  { text: 'ElementUI', link: '/vue3/elementUi' },
+				  { text: '二次封装axios', link: '/vue3/axios' },
 				  { text: '组件', link: '/vue3/components' },
 				]
 			},
