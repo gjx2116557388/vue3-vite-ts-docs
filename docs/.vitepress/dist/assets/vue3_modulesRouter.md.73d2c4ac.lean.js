@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,d as t}from"./app.6f4bf460.js";const m=JSON.parse('{"title":"\u6A21\u5757\u5316\u8DEF\u7531","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/modulesRouter.md"}'),o={name:"vue3/modulesRouter.md"},n=t("",2),r=[n];function c(_,d,p,l,i,u){return s(),a("div",null,r)}var f=e(o,[["render",c]]);export{m as __pageData,f as default};

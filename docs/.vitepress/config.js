@@ -30,6 +30,7 @@ module.exports = {
 				text: 'Git',
 				collapsible: true,
 				items: [
+				  { text: 'Git起步', link: '/git/start' },
 				  { text: 'Git用法', link: '/git/git' },
 				]
 			},
