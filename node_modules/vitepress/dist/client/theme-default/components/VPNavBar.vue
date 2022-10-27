@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSidebar } from '../composables/sidebar'
+import { useSidebar } from '../composables/sidebar.js'
 import VPNavBarTitle from './VPNavBarTitle.vue'
 import VPNavBarSearch from './VPNavBarSearch.vue'
 import VPNavBarMenu from './VPNavBarMenu.vue'
@@ -23,15 +23,20 @@ const { hasSidebar } = useSidebar()
 <template>
   <div class="VPNavBar" :class="{ 'has-sidebar' : hasSidebar }">
     <div class="container">
-      <VPNavBarTitle />
+      <VPNavBarTitle>
+        <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
+        <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
+      </VPNavBarTitle>
 
       <div class="content">
+        <slot name="nav-bar-content-before" />
         <VPNavBarSearch class="search" />
         <VPNavBarMenu class="menu" />
         <VPNavBarTranslations class="translations" />
         <VPNavBarAppearance class="appearance" />
         <VPNavBarSocialLinks class="social-links" />
         <VPNavBarExtra class="extra" />
+        <slot name="nav-bar-content-after" />
         <VPNavBarHamburger
           class="hamburger"
           :active="isScreenOpen"
@@ -49,6 +54,7 @@ const { hasSidebar } = useSidebar()
   padding: 0 8px 0 24px;
   height: var(--vp-nav-height-mobile);
   transition: border-color 0.5s, background-color 0.5s;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
@@ -91,6 +97,11 @@ const { hasSidebar } = useSidebar()
   justify-content: space-between;
   margin: 0 auto;
   max-width: calc(var(--vp-layout-max-width) - 64px);
+  pointer-events: none;
+}
+
+.container :deep(*) {
+  pointer-events: auto;
 }
 
 .content {

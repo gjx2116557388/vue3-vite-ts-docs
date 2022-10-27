@@ -1,42 +1,62 @@
-import { computed, onMounted, onUpdated, onUnmounted } from 'vue';
-import { useData } from 'vitepress';
-import { useAside } from '../composables/aside';
-import { throttleAndDebounce } from '../support/utils';
+import { onMounted, onUnmounted, onUpdated } from 'vue';
+import { useAside } from '../composables/aside.js';
+import { throttleAndDebounce } from '../support/utils.js';
 // magic number to avoid repeated retrieval
-const PAGE_OFFSET = 56;
-export function useOutline() {
-    const { page } = useData();
-    const hasOutline = computed(() => {
-        return page.value.headers.length > 0;
-    });
-    return {
-        hasOutline
-    };
-}
-export function resolveHeaders(headers) {
-    return mapHeaders(groupHeaders(headers));
-}
-function groupHeaders(headers) {
-    headers = headers.map((h) => Object.assign({}, h));
-    let lastH2;
-    for (const h of headers) {
-        if (h.level === 2) {
-            lastH2 = h;
+const PAGE_OFFSET = 71;
+export function getHeaders(pageOutline) {
+    if (pageOutline === false)
+        return [];
+    let updatedHeaders = [];
+    document
+        .querySelectorAll('h2, h3, h4, h5, h6')
+        .forEach((el) => {
+        if (el.textContent && el.id) {
+            updatedHeaders.push({
+                level: Number(el.tagName[1]),
+                title: el.innerText.replace(/\s+#\s*$/, ''),
+                link: `#${el.id}`
+            });
         }
-        else if (lastH2 && h.level <= 3) {
-            ;
-            (lastH2.children || (lastH2.children = [])).push(h);
+    });
+    return resolveHeaders(updatedHeaders, pageOutline);
+}
+export function resolveHeaders(headers, levelsRange = 2) {
+    const levels = typeof levelsRange === 'number'
+        ? [levelsRange, levelsRange]
+        : levelsRange === 'deep'
+            ? [2, 6]
+            : levelsRange;
+    return groupHeaders(headers, levels);
+}
+function groupHeaders(headers, levelsRange) {
+    const result = [];
+    headers = headers.map((h) => ({ ...h }));
+    headers.forEach((h, index) => {
+        if (h.level >= levelsRange[0] && h.level <= levelsRange[1]) {
+            if (addToParent(index, headers, levelsRange)) {
+                result.push(h);
+            }
+        }
+    });
+    return result;
+}
+function addToParent(currIndex, headers, levelsRange) {
+    if (currIndex === 0) {
+        return true;
+    }
+    const currentHeader = headers[currIndex];
+    for (let index = currIndex - 1; index >= 0; index--) {
+        const header = headers[index];
+        if (header.level < currentHeader.level &&
+            header.level >= levelsRange[0] &&
+            header.level <= levelsRange[1]) {
+            if (header.children == null)
+                header.children = [];
+            header.children.push(currentHeader);
+            return false;
         }
     }
-    return headers.filter((h) => h.level === 2);
-}
-function mapHeaders(headers) {
-    return headers.map((header) => ({
-        text: header.title,
-        link: `#${header.slug}`,
-        children: header.children ? mapHeaders(header.children) : undefined,
-        hidden: header.hidden
-    }));
+    return true;
 }
 export function useActiveAnchor(container, marker) {
     const { isAsideEnabled } = useAside();
@@ -68,7 +88,7 @@ export function useActiveAnchor(container, marker) {
         const scrollY = window.scrollY;
         const innerHeight = window.innerHeight;
         const offsetHeight = document.body.offsetHeight;
-        const isBottom = scrollY + innerHeight === offsetHeight;
+        const isBottom = Math.abs(scrollY + innerHeight - offsetHeight) < 1;
         // page bottom - highlight last one
         if (anchors.length && isBottom) {
             activateLink(anchors[anchors.length - 1].hash);
@@ -79,7 +99,6 @@ export function useActiveAnchor(container, marker) {
             const nextAnchor = anchors[i + 1];
             const [isActive, hash] = isAnchorActive(i, anchor, nextAnchor);
             if (isActive) {
-                history.replaceState(null, document.title, hash ? hash : ' ');
                 activateLink(hash);
                 return;
             }
@@ -105,7 +124,7 @@ export function useActiveAnchor(container, marker) {
     }
 }
 function getAnchorTop(anchor) {
-    return anchor.parentElement.offsetTop - PAGE_OFFSET - 15;
+    return anchor.parentElement.offsetTop - PAGE_OFFSET;
 }
 function isAnchorActive(index, anchor, nextAnchor) {
     const scrollTop = window.scrollY;

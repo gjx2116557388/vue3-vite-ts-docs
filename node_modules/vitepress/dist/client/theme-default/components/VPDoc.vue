@@ -1,19 +1,28 @@
 <script setup lang="ts">
 import { useRoute } from 'vitepress'
-import { useSidebar } from '../composables/sidebar'
+import { computed, provide, ref } from 'vue'
+import { useSidebar } from '../composables/sidebar.js'
 import VPDocAside from './VPDocAside.vue'
 import VPDocFooter from './VPDocFooter.vue'
 
-const { path } = useRoute()
-const { hasSidebar } = useSidebar()
+const route = useRoute()
+const { hasSidebar, hasAside } = useSidebar()
 
-const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
+const pageName = computed(() =>
+  route.path.replace(/[./]+/g, '_').replace(/_html$/, '')
+)
+
+const onContentUpdated = ref()
+provide('onContentUpdated', onContentUpdated)
 </script>
 
 <template>
-  <div class="VPDoc" :class="{ 'has-sidebar': hasSidebar }">
+  <div
+    class="VPDoc"
+    :class="{ 'has-sidebar': hasSidebar, 'has-aside': hasAside }"
+  >
     <div class="container">
-      <div class="aside">
+      <div v-if="hasAside" class="aside">
         <div class="aside-curtain" />
         <div class="aside-container">
           <div class="aside-content">
@@ -32,13 +41,11 @@ const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
       <div class="content">
         <div class="content-container">
           <slot name="doc-before" />
-
           <main class="main">
-            <Content class="vp-doc" :class="pageName" />
+            <Content class="vp-doc" :class="pageName" :onContentUpdated="onContentUpdated" />
           </main>
-
+          <slot name="doc-footer-before" />
           <VPDocFooter />
-
           <slot name="doc-after" />
         </div>
       </div>
@@ -67,10 +74,6 @@ const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
     display: flex;
     justify-content: center;
     max-width: 992px;
-  }
-
-  .VPDoc:not(.has-sidebar) .aside {
-    display: block;
   }
 
   .VPDoc:not(.has-sidebar) .content {
@@ -117,8 +120,8 @@ const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
 .aside-container {
   position: sticky;
   top: 0;
-  margin-top: calc(var(--vp-nav-height-desktop) * -1 - 32px);
-  padding-top: calc(var(--vp-nav-height-desktop) + 32px);
+  margin-top: calc((var(--vp-nav-height-desktop) + var(--vp-layout-top-height, 0px)) * -1 - 32px);
+  padding-top: calc(var(--vp-nav-height-desktop) + var(--vp-layout-top-height, 0px) + 32px);
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -141,7 +144,7 @@ const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
 .aside-content {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - (var(--vp-nav-height-desktop) + 32px));
+  min-height: calc(100vh - (var(--vp-nav-height-desktop) + var(--vp-layout-top-height, 0px) + 32px));
   padding-bottom: 32px;
 }
 
@@ -167,6 +170,9 @@ const pageName = path.replace(/[./]+/g, '_').replace(/_html$/, '')
 
 .content-container {
   margin: 0 auto;
+}
+
+.VPDoc.has-aside .content-container {
   max-width: 688px;
 }
 </style>

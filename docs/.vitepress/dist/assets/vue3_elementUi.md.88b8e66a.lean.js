@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,d as t}from"./app.601079c5.js";const h=JSON.parse('{"title":"Element UI","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/elementUi.md"}'),n={name:"vue3/elementUi.md"},o=t("",2),c=[o];function l(i,r,_,p,d,m){return s(),a("div",null,c)}const f=e(n,[["render",l]]);export{h as __pageData,f as default};

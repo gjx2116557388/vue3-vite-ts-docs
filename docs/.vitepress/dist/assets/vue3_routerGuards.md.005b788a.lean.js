@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as s,d as r}from"./app.6f4bf460.js";const f=JSON.parse('{"title":"\u8DEF\u7531\u5B88\u536B","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/routerGuards.md"}'),t={name:"vue3/routerGuards.md"},n=r("",2),o=[n];function c(_,d,p,i,l,u){return s(),e("div",null,o)}var m=a(t,[["render",c]]);export{f as __pageData,m as default};

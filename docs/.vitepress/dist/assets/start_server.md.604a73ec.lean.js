@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as e,d as n}from"./app.6f4bf460.js";const v=JSON.parse('{"title":"\u914D\u7F6EVite Server","description":"","frontmatter":{},"headers":[],"relativePath":"start/server.md"}'),p={name:"start/server.md"},t=n("",2),r=[t];function l(o,c,i,_,d,A){return e(),a("div",null,r)}var h=s(p,[["render",l]]);export{v as __pageData,h as default};

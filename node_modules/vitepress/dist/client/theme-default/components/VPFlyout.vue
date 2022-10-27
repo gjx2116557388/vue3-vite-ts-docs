@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { useFlyout } from '../composables/flyout'
+import { useFlyout } from '../composables/flyout.js'
 import VPIconChevronDown from './icons/VPIconChevronDown.vue'
 import VPIconMoreHorizontal from './icons/VPIconMoreHorizontal.vue'
 import VPMenu from './VPMenu.vue'
@@ -60,7 +60,7 @@ function onBlur() {
 }
 
 .VPFlyout:hover {
-  color: var(--vp-c-bland);
+  color: var(--vp-c-brand);
   transition: color 0.25s;
 }
 

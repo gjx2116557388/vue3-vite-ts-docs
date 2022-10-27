@@ -22,7 +22,7 @@ module.exports = {
 				  { text: 'Vuex', link: '/vue3/vuex' },
 				  { text: '路由守卫', link: '/vue3/routerGuards' },
 				  { text: 'ElementUI', link: '/vue3/elementUi' },
-				  { text: '二次封装axios', link: '/vue3/axios' },
+				  { text: '引入axios', link: '/vue3/axios' },
 				  { text: '组件', link: '/vue3/components' },
 				]
 			},
@@ -32,6 +32,14 @@ module.exports = {
 				items: [
 				  { text: 'Git起步', link: '/git/start' },
 				  { text: 'Git用法', link: '/git/git' },
+				]
+			},
+			{
+				text: 'NodeJs',
+				collapsible: true,
+				items: [
+				  { text: 'fs模块', link: '/nodeJs/fs' },
+				  { text: 'path', link: '/nodeJs/path' },
 				]
 			},
 		],

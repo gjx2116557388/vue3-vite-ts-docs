@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,d as t}from"./app.601079c5.js";const C=JSON.parse('{"title":"Vite\u521B\u5EFAvue\u9879\u76EE\u6A21\u677F","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/vueCreate.md"}'),n={name:"vue3/vueCreate.md"},l=t("",7),p=[l];function o(c,i,r,d,u,v){return s(),a("div",null,p)}const m=e(n,[["render",o]]);export{C as __pageData,m as default};

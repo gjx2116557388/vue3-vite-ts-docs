@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSidebar } from '../composables/sidebar'
+import { useSidebar } from '../composables/sidebar.js'
 import VPIconAlignLeft from './icons/VPIconAlignLeft.vue'
 
 defineProps<{
@@ -48,6 +48,7 @@ function scrollToTop() {
   width: 100%;
   background-color: var(--vp-c-bg);
   transition: border-color 0.5s, background-color 0.5s;
+  padding-top: var(--vp-layout-top-height, 0px);
 }
 
 @media (min-width: 960px) {

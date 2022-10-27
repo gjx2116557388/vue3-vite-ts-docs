@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,d as i}from"./app.6f4bf460.js";const v=JSON.parse('{"title":"Vue3+Vite+TS\u5B66\u4E60\u6587\u6863","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),r={name:"index.md"},s=i("",4),o=[s];function n(_,d,c,l,p,h){return a(),t("div",null,o)}var m=e(r,[["render",n]]);export{v as __pageData,m as default};

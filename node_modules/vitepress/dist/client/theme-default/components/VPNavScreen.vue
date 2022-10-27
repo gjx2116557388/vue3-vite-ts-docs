@@ -29,10 +29,12 @@ function unlockBodyScroll() {
   >
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
+        <slot name="nav-screen-content-before" />
         <VPNavScreenMenu class="menu" />
         <VPNavScreenTranslations class="translations" />
         <VPNavScreenAppearance class="appearance" />
         <VPNavScreenSocialLinks class="social-links" />
+        <slot name="nav-screen-content-after" />
       </div>
     </div>
   </transition>
@@ -41,7 +43,7 @@ function unlockBodyScroll() {
 <style scoped>
 .VPNavScreen {
   position: fixed;
-  top: var(--vp-nav-height-mobile);
+  top: calc(var(--vp-nav-height-mobile) + var(--vp-layout-top-height, 0px));
   right: 0;
   bottom: 0;
   left: 0;
@@ -50,6 +52,7 @@ function unlockBodyScroll() {
   background-color: var(--vp-c-bg);
   overflow-y: auto;
   transition: background-color 0.5s;
+  pointer-events: auto;
 }
 
 .VPNavScreen.fade-enter-active,

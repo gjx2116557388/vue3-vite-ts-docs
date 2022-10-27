@@ -1,9 +1,9 @@
 import { onMounted, onUnmounted } from 'vue';
-import { throttleAndDebounce } from '../support/utils';
+import { throttleAndDebounce } from '../support/utils.js';
 /**
- * Defines grid configuration for each sponsor size in touple.
+ * Defines grid configuration for each sponsor size in tuple.
  *
- * [Screen widh, Column size]
+ * [Screen width, Column size]
  *
  * It sets grid size on matching screen size. For example, `[768, 5]` will
  * set 5 columns when screen size is bigger or equal to 768px.

@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add --dev vitepress vue
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\PuTTY\;G:\gitMenus\nvm;C:\Program Files\nodejs;D:\Git\cmd;C:\platform-tools;C:\Program Files\Go\bin;D:\Scripts\;D:\;F:\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin;D:\PhpStorm 2020.2.1\bin;D:\Microsoft VS Code\bin;D:\PyCharm 2021.3.1\bin;D:\Program Files\Tencent\QQGAME\Hall.57768\;D:\JavaSE;C:\Users\GJX\go\bin;C:\Users\GJX\AppData\Local\JetBrains\Toolbox\scripts:c:\Users\GJX\.vscode\extensions\trunk.io-3.3.1\out
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'G:\vue3-vite-ts-docs\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "dependencies": {
+      "vitepress": "^1.0.0-alpha.4",
+      "vue": "^3.2.37"
+    },
+    "scripts": {
+      "docs:dev": "vitepress dev docs",
+      "docs:build": "vitepress build docs",
+      "docs:serve": "vitepress serve docs"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,19 +1,19 @@
 import { ref } from 'vue';
-import { withBase } from 'vitepress';
+import { withBase, useData } from 'vitepress';
+import { EXTERNAL_URL_RE } from '../../shared.js';
 export const HASH_RE = /#.*$/;
 export const EXT_RE = /(index)?\.(md|html)$/;
-export const OUTBOUND_RE = /^[a-z]+:/i;
 const inBrowser = typeof window !== 'undefined';
 const hashRef = ref(inBrowser ? location.hash : '');
 export function isExternal(path) {
-    return OUTBOUND_RE.test(path);
+    return EXTERNAL_URL_RE.test(path);
 }
 export function throttleAndDebounce(fn, delay) {
-    let timeout;
+    let timeoutId;
     let called = false;
     return () => {
-        if (timeout) {
-            clearTimeout(timeout);
+        if (timeoutId) {
+            clearTimeout(timeoutId);
         }
         if (!called) {
             fn();
@@ -23,7 +23,7 @@ export function throttleAndDebounce(fn, delay) {
             }, delay);
         }
         else {
-            timeout = setTimeout(fn, delay);
+            timeoutId = setTimeout(fn, delay);
         }
     };
 }
@@ -54,9 +54,10 @@ export function normalizeLink(url) {
     if (isExternal(url)) {
         return url;
     }
+    const { site } = useData();
     const { pathname, search, hash } = new URL(url, 'http://example.com');
     const normalizedPath = pathname.endsWith('/') || pathname.endsWith('.html')
         ? url
-        : `${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`;
+        : `${pathname.replace(/(\.md)?$/, site.value.cleanUrls === 'disabled' ? '.html' : '')}${search}${hash}`;
     return withBase(normalizedPath);
 }
