@@ -1,7 +1,7 @@
 # path模块
 
 ## 导入path模块
-> Node.js path 模块提供了一些用于处理文件路径的小工具 也是内置直接引入就可以
+> Node.js path 模块提供了一些用于处理文件路径的小工具 也是内置直接引入就可以  
 > 路径推荐使用`path.join(__dirname,"./src","./index.html")`这样的写法
 
 ## path.join() (基本上就只常用这个)
