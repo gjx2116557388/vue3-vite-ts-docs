@@ -1,6 +1,7 @@
 # 引入Axios
 `npm i vue-axios`  
-```
+
+```ts
 import VueAxios from 'vue-axios'
 
 // baseUrl

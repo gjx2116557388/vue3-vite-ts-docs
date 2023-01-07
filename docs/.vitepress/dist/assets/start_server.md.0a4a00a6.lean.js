@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,d as e}from"./app.aa367625.js";const A=JSON.parse('{"title":"配置Vite Server","description":"","frontmatter":{},"headers":[],"relativePath":"start/server.md"}'),l={name:"start/server.md"},p=e("",2),o=[p];function t(r,c,i,D,y,F){return n(),a("div",null,o)}const _=s(l,[["render",t]]);export{A as __pageData,_ as default};

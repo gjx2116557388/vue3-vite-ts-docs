@@ -8,7 +8,7 @@
 > `__dirname` 表示当前文件所在的目录的绝对路径  
 > `__filename` 表示当前文件的绝对路径
 
-```
+```js
  const path  = require("path")
  path.join("./src","index.html")  // 返回 ./src/index.html
 
@@ -25,7 +25,7 @@
 > 返回路径中的最后一部分
 
 ## path.resolve()  path.relative()  (基本上不常用)
-```
+```js
 path.resolve() // 绝对路径
 path.resolve('/foo/bar', './baz');
 // 返回: '/foo/bar/baz'
@@ -37,7 +37,7 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 // 如果当前工作目录为 /home/myself/node，
 // 则返回 '/home/myself/node/wwwroot/static_files/gif/image.gif'
 ```
-```
+```js
 path.relative() // 相对路径
 
 // 在 Linux 上：
@@ -56,3 +56,5 @@ path.relative('C:\\orandea\\test\\aaa', 'C:\\orandea\\impl\\bbb');
 
 ## path.isAbsolute(path)
 > 判断参数 path 是否是绝对路径
+
+<center>后续更新。。。。。</center>

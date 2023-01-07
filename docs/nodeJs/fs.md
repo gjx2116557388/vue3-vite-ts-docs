@@ -5,7 +5,7 @@
 > 路径推荐使用`path.join(__dirname,"./src","./index.html")`这样的写法 
 
 ## 读取文件  fs.readFile
-```
+```js
 const fs  = require("fs")
 // fs读取文件
 fs.readFile("路径","编码格式",(err,data)=>{回调函数})
@@ -19,7 +19,7 @@ fs.readFile(__dirname+"./xxx.txt","utf-8",(err,data)=>{
 ```
 > 当读取二进制文件时，不传入文件编码时，回调函数的data参数将返回一个Buffer对象。在Node.js中，Buffer对象就是一个包含零个或任意个字节的数组（注意和Array不同）。
 > Buffer对象可以和String作转换，例如，把一个Buffer对象转换成String：
-```
+```js
 fs.readFile('sample.png', function (err, data) {
     if (err) {
         return console.log(err)
@@ -34,7 +34,7 @@ console.log(text);
 ```
 
 ## 写入文件  fs.writeFile
-```
+```js
 const fs  = require("fs")
 let data = '我是大帅逼';
 fs.writeFile('./index.html', data, err => {
@@ -47,7 +47,7 @@ fs.writeFile('./index.html', data, err => {
 ```
 
 ## 获取文件大小（不常用）  fs.stat
-```
+```js
 const fs  = require("fs")
 fs.stat('./indedx.html',(err,data)=>{
     if(err){
@@ -67,3 +67,4 @@ fs.stat('./indedx.html',(err,data)=>{
     }
 })
 ```
+<center>后续更新。。。。。</center>

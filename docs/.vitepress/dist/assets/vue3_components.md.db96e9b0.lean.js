@@ -1,1 +1,0 @@
-import{_ as e,c as s,o as a,d as n}from"./app.601079c5.js";const u=JSON.parse('{"title":"\u7EC4\u4EF6","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/components.md"}'),t={name:"vue3/components.md"},o=n("",2),c=[o];function p(r,_,l,d,i,h){return a(),s("div",null,c)}const f=e(t,[["render",p]]);export{u as __pageData,f as default};

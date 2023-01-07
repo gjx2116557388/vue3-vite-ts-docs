@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as l}from"./app.aa367625.js";const i=JSON.parse('{"title":"Vue3封装组件","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/components.md"}'),p={name:"vue3/components.md"},o=l("",7),t=[o];function e(c,r,D,y,C,F){return a(),n("div",null,t)}const d=s(p,[["render",e]]);export{i as __pageData,d as default};

@@ -23,7 +23,7 @@ module.exports = {
 				  { text: '路由守卫', link: '/vue3/routerGuards' },
 				  { text: 'ElementUI', link: '/vue3/elementUi' },
 				  { text: '引入axios', link: '/vue3/axios' },
-				  { text: '组件', link: '/vue3/components' },
+				  { text: '封装组件', link: '/vue3/components' },
 				]
 			},
 			{
@@ -32,6 +32,7 @@ module.exports = {
 				items: [
 				  { text: 'Git起步', link: '/git/start' },
 				  { text: 'Git用法', link: '/git/git' },
+				  { text: 'Git常用指令', link: '/git/git常用指令' },
 				]
 			},
 			{
@@ -39,7 +40,9 @@ module.exports = {
 				collapsible: true,
 				items: [
 				  { text: 'fs模块', link: '/nodeJs/fs' },
+				  { text: 'fs拓展', link: '/nodeJs/fs拓展' },
 				  { text: 'path', link: '/nodeJs/path' },
+				  { text: 'mysql', link: '/nodeJs/mysql' },
 				]
 			},
 		],

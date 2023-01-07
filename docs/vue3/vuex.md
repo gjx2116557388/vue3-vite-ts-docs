@@ -1,14 +1,14 @@
 # Vuex的配置及使用方法
 ## 配置VueX
 1. 安装
-```
+```ts
 //yarn
 yarn add vuex@4.*
 //npm
 npm install -save vuex@4.*
 ```
 2. 创建store.ts并且配置
-```
+```ts
 //store.ts
 import {createStore} from 'vuex'
 export default createStore({

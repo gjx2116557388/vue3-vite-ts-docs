@@ -1,7 +1,7 @@
 # 路由守卫
 
 ## 全局前置路由守卫
-```
+```ts
 // 全局前置路由守卫
   router.beforeEach((to, from, next) => {
     if (to.path === "/login") {
@@ -24,7 +24,7 @@
 ```
 
 ## 全局解析守卫
-```
+```ts
 router.beforeResolve(async to => {
   if (to.meta.requiresCamera) {
     try {
@@ -43,7 +43,7 @@ router.beforeResolve(async to => {
 ```
 
 ## 全局后置钩子
-```
+```ts
 router.afterEach((to, from) => {
   sendToAnalytics(to.fullPath)
 })
@@ -56,7 +56,7 @@ router.afterEach((to, from, failure) => {
 ```
 
 ## 路由独享的守卫
-```
+```ts
 const routes = [
   {
     path: '/users/:id',
@@ -70,7 +70,7 @@ const routes = [
 ```
 
 ## 组件内的守卫
-```
+```ts
 const UserDetails = {
   template: `...`,
   beforeRouteEnter(to, from) {
