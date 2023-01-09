@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as s,d as t}from"./app.aa367625.js";const m=JSON.parse('{"title":"模块化路由","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/modulesRouter.md"}'),o={name:"vue3/modulesRouter.md"},n=t("",2),c=[n];function r(l,_,d,i,p,u){return s(),a("div",null,c)}const f=e(o,[["render",r]]);export{m as __pageData,f as default};

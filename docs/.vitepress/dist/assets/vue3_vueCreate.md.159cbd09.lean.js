@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as s,d as t}from"./app.aa367625.js";const C=JSON.parse('{"title":"Vite创建vue项目模板","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/vueCreate.md"}'),n={name:"vue3/vueCreate.md"},l=t("",7),p=[l];function o(c,i,r,d,u,v){return s(),a("div",null,p)}const m=e(n,[["render",o]]);export{C as __pageData,m as default};

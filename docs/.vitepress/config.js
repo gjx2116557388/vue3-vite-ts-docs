@@ -43,6 +43,7 @@ module.exports = {
 				  { text: 'fs拓展', link: '/nodeJs/fs拓展' },
 				  { text: 'path', link: '/nodeJs/path' },
 				  { text: 'mysql', link: '/nodeJs/mysql' },
+				  { text: '实现登录注册接口', link: '/nodeJs/loginRegister' },
 				]
 			},
 		],
