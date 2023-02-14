@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,d as l}from"./app.37b7e8eb.js";const A=JSON.parse('{"title":"MySQL数据库配置","description":"","frontmatter":{},"headers":[],"relativePath":"nodeJs/mysql.md"}'),p={name:"nodeJs/mysql.md"},o=l("",3),e=[o];function t(c,r,y,D,F,i){return a(),n("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};

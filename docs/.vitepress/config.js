@@ -50,9 +50,9 @@ module.exports = {
 				text: 'NestJs',
 				collapsible: true,
 				items: [
-				  { text: '初识', link: '/nestJs/创建项目' },
-				  { text: '快速上手', link: '/nestJs/快速上手' },
-				  { text: '第一个接口', link: '/nestJs/第一个接口' },
+				  { text: '初识', link: '/nestjs/创建项目' },
+				  { text: '快速上手', link: '/nestjs/快速上手' },
+				  { text: '第一个接口', link: '/nestjs/第一个接口' },
 				]
 			},
 		],
