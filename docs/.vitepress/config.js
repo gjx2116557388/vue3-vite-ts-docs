@@ -7,9 +7,9 @@ module.exports = {
 				text: 'Start',
 				collapsible: true,
 				items: [
-				  { text: '创建Vite', link: './start/create' },
-				  { text: '配置server', link: './start/server' },
-				  { text: '配置路径别名', link: './start/alias' },
+				  { text: '创建Vite', link: '/start/create' },
+				  { text: '配置server', link: '/start/server' },
+				  { text: '配置路径别名', link: '/start/alias' },
 				]
 			},
 			{
@@ -44,6 +44,15 @@ module.exports = {
 				  { text: 'path', link: '/nodeJs/path' },
 				  { text: 'mysql', link: '/nodeJs/mysql' },
 				  { text: '实现登录注册接口', link: '/nodeJs/loginRegister' },
+				]
+			},
+			{
+				text: 'NestJs',
+				collapsible: true,
+				items: [
+				  { text: '初识', link: '/nestJs/创建项目' },
+				  { text: '快速上手', link: '/nestJs/快速上手' },
+				  { text: '第一个接口', link: '/nestJs/第一个接口' },
 				]
 			},
 		],

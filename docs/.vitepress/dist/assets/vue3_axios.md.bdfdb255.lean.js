@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as l}from"./app.37b7e8eb.js";const C=JSON.parse('{"title":"引入Axios","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/axios.md"}'),o={name:"vue3/axios.md"},p=l("",3),e=[p];function t(c,r,F,y,D,A){return a(),n("div",null,e)}const u=s(o,[["render",t]]);export{C as __pageData,u as default};

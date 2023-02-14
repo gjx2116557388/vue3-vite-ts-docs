@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,d as e}from"./app.37b7e8eb.js";const h=JSON.parse('{"title":"初识Nestjs","description":"","frontmatter":{},"headers":[],"relativePath":"nestjs/创建项目.md"}'),l={name:"nestjs/创建项目.md"},t=e("",3),p=[t];function o(c,i,r,d,y,_){return n(),a("div",null,p)}const D=s(l,[["render",o]]);export{h as __pageData,D as default};

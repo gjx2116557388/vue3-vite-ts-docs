@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,d as t}from"./app.37b7e8eb.js";const m=JSON.parse('{"title":"创建第一个Vite项目","description":"","frontmatter":{},"headers":[],"relativePath":"start/create.md"}'),n={name:"start/create.md"},l=t("",7),o=[l];function p(c,i,r,d,_,h){return s(),e("div",null,o)}const u=a(n,[["render",p]]);export{m as __pageData,u as default};
